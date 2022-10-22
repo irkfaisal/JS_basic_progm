@@ -1,35 +1,23 @@
-//   Rotate an Array in JavaScript
+//   Rotate an Array element in JavaScript
 
-// Method 1
-const rotateArray1 = function (nums, k) {
+//  Problem 1
+// input: [1,2,3,4,5,6]
+// output: [4,5,6,1,2,3]  moved k elements of starting index to the last position mean from left to right position
 
-    for (let i = 0; i < k; i++) {
-        nums.unshift(nums.pop());
-    }
-
-    return nums;
+let array = [1,2,3,4,5,6];
+let k =3;
+for(let i=0; i<k; i++){
+array.push(array.shift(array[i]));
 }
-let nums = [1, 2, 3, 4, 5];
-let k = 3;
-console.log(nums);
+console.log(array)
 
-// Method 2
-const rotateArray2 = function (nums, k) {
 
-    // reverse helper function
-    function reverse(arr, start, end) {
-        while (start < end) {
-            [arr[start], arr[end]] = [arr[end], arr[start]];
-            start++;
-            end--;
-        }
-    }
-
-    k %= nums.length;
-
-    reverse(nums, 0, (nums.length - 1));
-    reverse(nums, 0, (k - 1));
-    reverse(nums, k, (nums.length - 1));
-
-    return nums;
+// Problem 2
+// input: [1,2,3,4,5,6]
+// output: [4,5,6,1,2,3]  moved k elements of last position to the stating position mean from right to left position
+let array1 = [1,2,3,4,5,6];
+let z =3;
+for(let i=0; i<z; i++){
+    array1.unshift(array1.pop(array1[i])); 
 }
+console.log(array1)
